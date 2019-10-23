@@ -1,24 +1,39 @@
 import React, { Component } from 'react';
 
-import { posts, categories, categoryAll } from '../store';
+import { categoryAll } from '../store';
 import Categories from './Categories';
 import PostDetail from './PostDetail';
 import PostForm from './PostForm';
+import { getPosts, createPost } from '../api/posts';
+import { getCategories } from '../api/categories';
 
 class Posts extends Component {
 
-  // constructor() {
-  //   super();
+  constructor() {
+    super();
 
-  //   this.state = {
-  //     selectedCategory: categoryAll
-  //   };
-  // }
+    this.state = {
+      posts: [],
+      categories: [],
+      selectedCategory: categoryAll
+    };
 
-  state = {
-    posts: posts,
-    categories: categories,
-    selectedCategory: categoryAll
+  }
+
+  componentDidMount() {
+    getCategories()
+      .then(categories => this.setState({ categories }))
+      .catch(error => {
+        console.log('Get categories failed.');
+        console.log('Error:', error);
+      });
+
+    getPosts()
+      .then(posts => this.setState({ posts }))
+      .catch(error => {
+        console.log('Get posts failed.');
+        console.log('Error:', error);
+      });
   }
 
   handleCategorySelect = (category) => {
@@ -31,11 +46,18 @@ class Posts extends Component {
   }
 
   handlePostCreate = (newPost) => {
-    this.setState((prevState) => {
-      return {
-        posts: [...prevState.posts, newPost]
-      }
-    });
+    createPost(newPost)
+      .then(post => {
+        this.setState((prevState) => {
+          return {
+            posts: [...prevState.posts, post]
+          }
+        });
+      })
+      .catch(error => {
+        console.log('Create post failed.');
+        console.log('Error:', error);
+      })
   }
 
   filterPosts = (allPosts) => {
@@ -45,6 +67,36 @@ class Posts extends Component {
       : allPosts.filter(p => p.category === selectedCategory.id);
 
     return filteredPosts;
+  }
+
+  renderPosts(posts) {
+
+    return <table className="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Category</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {posts.map(p => <tr key={p.id}>
+          <td>{p.title}</td>
+          <td>{p.author}</td>
+          <td>{p.category}</td>
+          <td>
+            <div className="btn-group btn-group-sm">
+              <a className="btn btn-info" href="#">View </a>
+              <a className="btn btn-warning" href="#">Edit</a>
+              <a className="btn btn-danger" href="#">Delete</a>
+            </div>
+          </td>
+        </tr>)}
+
+      </tbody>
+    </table>;
+
   }
 
   render() {
@@ -58,19 +110,19 @@ class Posts extends Component {
           onCategorySelect={this.handleCategorySelect}
         />
       </div>
-      <div className="col-12 col-md-5">
+      <div className="col-12 col-md-9">
         <h5>Posts</h5>
         {filteredPosts.length > 0
-          ? filteredPosts.map(post => <PostDetail key={post.id} post={post} />)
+          ? this.renderPosts(filteredPosts)
           : <div className="alert alert-info">No posts for this category!</div>
         }
-      </div >
-      <div className="col-12 col-md-4">
+      </div>
+      {/* <div className="col-12 col-md-4">
         <PostForm
           categories={categories}
           onPostCreate={this.handlePostCreate}
         />
-      </div>
+      </div> */}
     </div>;
   }
 }

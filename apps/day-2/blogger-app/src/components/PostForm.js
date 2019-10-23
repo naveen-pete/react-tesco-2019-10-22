@@ -28,7 +28,6 @@ class PostForm extends Component {
     e.preventDefault();
 
     const post = { ...this.state };
-    post.id = Date.now();
 
     this.props.onPostCreate(post);
   }

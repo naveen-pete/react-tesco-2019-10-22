@@ -20,6 +20,13 @@
       "body": "Just kidding. It takes more than 10 minutes to learn technology.",
       "author": "thingone",
       "category": "redux"
+    },
+    {
+      "title": "p1",
+      "body": "p1 desc",
+      "author": "abc",
+      "category": "es6",
+      "id": 4
     }
   ],
   "categories": [
