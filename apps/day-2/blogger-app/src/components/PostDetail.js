@@ -1,22 +1,24 @@
 import React from 'react';
 
-const PostDetail = (props) => {
+const PostDetail = ({ post }) => {
+  const { title, body, author, category } = post;
+
   return (
     <div className="card bg-light mb-3">
       <div className="card-header">
         <h5>
-          {props.post.title}
+          {title}
         </h5>
       </div>
       <div className="card-body">
         <p className="card-text">
-          {props.post.body}
+          {body}
         </p>
         <p className="card-text">Author: <em>
-          {props.post.author}
+          {author}
         </em></p>
         <p className="card-text">Category: <em>
-          {props.post.category}
+          {category}
         </em></p>
       </div>
       <div className="card-footer">

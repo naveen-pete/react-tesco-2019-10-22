@@ -4,21 +4,21 @@ export const posts = [
     title: 'React Overview',
     body: 'Provides an overview of React',
     author: 'Ram',
-    category: 'React'
+    category: 'react'
   },
   {
     id: 2,
     title: 'Angular JumpStart',
     body: 'Related to Angular',
     author: 'Hari',
-    category: 'Angular'
+    category: 'angular'
   },
   {
     id: 3,
     title: 'Introduction to Redux',
     body: 'Provides an overview of Redux and its building blocks.',
     author: 'Krish',
-    category: 'Redux'
+    category: 'redux'
   }
 ];
 
@@ -34,6 +34,10 @@ export const categories = [
   {
     id: 'redux',
     name: 'Redux'
+  },
+  {
+    id: 'dotnet',
+    name: 'DotNet'
   }
 ];
 
