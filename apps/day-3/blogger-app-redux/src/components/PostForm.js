@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import { createPost } from '../api/posts';
 
@@ -110,4 +111,10 @@ class PostForm extends Component {
   }
 }
 
-export default PostForm;
+const mapStateToProps = ({ categories }) => {
+  return {
+    categories
+  };
+};
+
+export default connect(mapStateToProps, null)(PostForm);
