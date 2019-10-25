@@ -1,7 +1,7 @@
 const express = require('express');
 const _ = require('lodash');
 
-const { createHash } = require('../helpers/hash');
+// const { createHash } = require('../helpers/hash');
 const { User, validate } = require('../models/user');
 const auth = require('../middleware/auth');
 const admin = require('../middleware/admin');
@@ -31,7 +31,7 @@ router.route('/')
       }
 
       let newUser = _.pick(req.body, ['name', 'email', 'password', 'isAdmin']);
-      newUser.password = await createHash(newUser.password);
+      // newUser.password = await createHash(newUser.password);
       user = await User.create(newUser);
 
       res.json(_.pick(user, ['_id', 'name', 'email', 'isAdmin']));

@@ -3,7 +3,7 @@ const _ = require('lodash');
 
 const { validate } = require('../models/auth');
 const { User } = require('../models/user');
-const { compareHash } = require('../helpers/hash');
+// const { compareHash } = require('../helpers/hash');
 
 const router = express.Router();
 
@@ -19,7 +19,8 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ message: 'Invalid user or password.' });
     }
 
-    const result = await compareHash(req.body.password, user.password);
+    // const result = await compareHash(req.body.password, user.password);
+    const result = req.body.password === user.password;
     if (!result) {
       return res.status(400).json({ message: 'Invalid user or password.' });
     }

@@ -31,16 +31,16 @@ export class PostList extends Component {
         </div>
         <h4>
           <FontAwesome name="envelope" /> Posts (Category:{' '}
-            <span id="category">{currentCategory.name}</span>)
+          <span id="category">{currentCategory.name}</span>)
         </h4>
         {filteredPosts.length > 0 ? (
           filteredPosts.map(post => <PostListItem key={post.id} post={post} />)
         ) : (
-          <AppAlert
-            type="info"
-            message="No posts available for selected category."
-          />
-        )}
+            <AppAlert
+              type="info"
+              message="No posts available for selected category."
+            />
+          )}
       </div>
     );
   }
