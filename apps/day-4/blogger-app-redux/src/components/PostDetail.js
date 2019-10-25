@@ -1,36 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// import { getPost } from '../api/posts';
-// import { getCategory } from '../api/categories';
 import { getOnePost } from "../redux/actions";
 
 class PostDetail extends Component {
-  state = {
-    // post: {
-    //   title: '',
-    //   body: '',
-    //   author: '',
-    //   category: ''
-    // },
-    // category: {
-    //   id: '',
-    //   name: ''
-    // }
-  }
 
   componentDidMount() {
-    // getPost(this.props.match.params.id)
-    //   .then(post => {
-    //     this.setState({ post });
-    //     return getCategory(post.category);
-    //   })
-    // .then(category => this.setState({ category }))
-    // .catch(error => {
-    //   console.log('Get post / category failed.');
-    //   console.log('Error:', error);
-    // });
-
     this.props.getOnePost(this.props.match.params.id);
   }
 

@@ -2,34 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { categoryAll } from '../store';
 import Categories from './Categories';
-import { getPosts } from '../redux/actions';
+import { getPosts, deletePost } from '../redux/actions';
 
 
 class Posts extends Component {
-
-  constructor() {
-    super();
-
-    this.state = {
-      selectedCategory: categoryAll
-    };
-
-  }
-
   componentDidMount() {
     this.props.getPosts();
   }
 
-  handleCategorySelect = (category) => {
-    this.setState({
-      selectedCategory: category
-    });
-  }
-
   filterPosts = (allPosts) => {
-    const selectedCategory = this.state.selectedCategory;
+    const selectedCategory = this.props.selectedCategory;
     const filteredPosts = selectedCategory.id === 'all'
       ? allPosts
       : allPosts.filter(p => p.category === selectedCategory.id);
@@ -57,7 +40,10 @@ class Posts extends Component {
             <div className="btn-group btn-group-sm">
               <Link className="btn btn-info" to={`/posts/${p.id}`}>View </Link>
               <a className="btn btn-warning" href="#">Edit</a>
-              <a className="btn btn-danger" href="#">Delete</a>
+              <button
+                className="btn btn-danger"
+                onClick={() => this.props.deletePost(p.id)}
+              >Delete</button>
             </div>
           </td>
         </tr>)}
@@ -73,9 +59,7 @@ class Posts extends Component {
 
     return <div className="row">
       <div className="col-12 col-md-3">
-        <Categories
-          onCategorySelect={this.handleCategorySelect}
-        />
+        <Categories />
       </div>
       <div className="col-12 col-md-9">
         <h5>Posts</h5>
@@ -88,15 +72,17 @@ class Posts extends Component {
   }
 }
 
-const mapStateToProps = ({ posts }) => {
+const mapStateToProps = ({ posts, selectedCategory }) => {
   return {
-    posts
+    posts,
+    selectedCategory
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getPosts: () => dispatch(getPosts())
+    getPosts: () => dispatch(getPosts()),
+    deletePost: id => dispatch(deletePost(id))
   };
 };
 

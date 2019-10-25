@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { categoryAll } from '../store';
+import { selectCategory } from '../redux/actions';
 
-const Categories = ({ categories, onCategorySelect }) => {
+const Categories = ({ categories, selectCategory }) => {
   const categoriesWithAll = [categoryAll, ...categories];
   return <div>
     <h5>Categories</h5>
@@ -11,7 +12,7 @@ const Categories = ({ categories, onCategorySelect }) => {
       {categoriesWithAll.map(c => <li
         key={c.id}
         className="list-group-item"
-        onClick={() => { onCategorySelect(c) }}
+        onClick={() => { selectCategory(c) }}
       >{c.name}</li>)}
     </ul>
   </div>
@@ -23,4 +24,10 @@ const mapStateToProps = ({ categories }) => {
   }
 }
 
-export default connect(mapStateToProps)(Categories);
+const mapDispatchToProps = dispatch => {
+  return {
+    selectCategory: (selectedCategory) => dispatch(selectCategory(selectedCategory))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);

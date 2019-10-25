@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { createPost } from '../api/posts';
+import { createPost } from '../redux/actions';
 
 class PostForm extends Component {
   state = {
@@ -30,14 +30,8 @@ class PostForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    createPost(this.state)
-      .then(() => {
-        this.props.history.push('/posts');
-      })
-      .catch(error => {
-        console.log('Create post failed.');
-        console.log('Error:', error);
-      });
+    this.props.createPost(this.state)
+      .then(() => this.props.history.push('/posts'));
   }
 
   render() {
@@ -98,6 +92,7 @@ class PostForm extends Component {
                 value={category}
                 onChange={this.handleCategoryChange}
               >
+                <option value=""></option>
                 {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
               </select>
             </div>
@@ -117,4 +112,10 @@ const mapStateToProps = ({ categories }) => {
   };
 };
 
-export default connect(mapStateToProps, null)(PostForm);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createPost: (post) => dispatch(createPost(post))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm);

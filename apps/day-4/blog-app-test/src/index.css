@@ -1,0 +1,16 @@
+body {
+  padding-top: 70px;
+}
+
+.smallMargin {
+  margin: 1px;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.alignMiddle {
+  vertical-align: middle;
+  padding-top: 15px;
+}

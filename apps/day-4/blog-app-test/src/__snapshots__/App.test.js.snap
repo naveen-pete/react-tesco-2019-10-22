@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render App correctly (using enzyme) 1`] = `
+<div>
+  <Header />
+  <div
+    className="container"
+  >
+    <Switch>
+      <Route
+        component={[Function]}
+        path="/posts/new"
+      />
+      <Route
+        component={[Function]}
+        path="/posts/:id/edit"
+      />
+      <Route
+        component={[Function]}
+        path="/posts/:id"
+      />
+      <Route
+        component={[Function]}
+        path="/"
+      />
+    </Switch>
+  </div>
+</div>
+`;
+
+exports[`should render App correctly (using react-test-renderer) 1`] = `
+<div>
+  <Header />
+  <div
+    className="container"
+  >
+    <Switch>
+      <Route
+        component={[Function]}
+        path="/posts/new"
+      />
+      <Route
+        component={[Function]}
+        path="/posts/:id/edit"
+      />
+      <Route
+        component={[Function]}
+        path="/posts/:id"
+      />
+      <Route
+        component={[Function]}
+        path="/"
+      />
+    </Switch>
+  </div>
+</div>
+`;

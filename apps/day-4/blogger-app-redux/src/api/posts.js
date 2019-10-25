@@ -17,4 +17,9 @@ export const createPost = post => {
     headers: { 'content-type': 'application/json' }
   })
     .then(response => response.json());
-}
+};
+
+export const deletePost = id => {
+  return fetch(`${apiUrl}/${id}`, { method: 'DELETE' })
+    .then(response => response.json());
+};

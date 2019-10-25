@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render categories component properly 1`] = `
+<div
+  className="col-sm-3"
+>
+  <h4>
+    <FontAwesome
+      name="object-group"
+    />
+     Category
+  </h4>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item cursorPointer "
+      key="all"
+      onClick={[Function]}
+    >
+      All
+    </li>
+    <li
+      className="list-group-item cursorPointer active"
+      key="react"
+      onClick={[Function]}
+    >
+      React
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="redux"
+      onClick={[Function]}
+    >
+      Redux
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="angular"
+      onClick={[Function]}
+    >
+      Angular
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="es6"
+      onClick={[Function]}
+    >
+      ES6
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`should render the list of categories 1`] = `
+<div
+  className="col-sm-3"
+>
+  <h4>
+    <FontAwesome
+      name="object-group"
+    />
+     Category
+  </h4>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item cursorPointer "
+      key="all"
+      onClick={[Function]}
+    >
+      All
+    </li>
+    <li
+      className="list-group-item cursorPointer active"
+      key="react"
+      onClick={[Function]}
+    >
+      React
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="redux"
+      onClick={[Function]}
+    >
+      Redux
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="angular"
+      onClick={[Function]}
+    >
+      Angular
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="es6"
+      onClick={[Function]}
+    >
+      ES6
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`should render the list of categories 2`] = `
+<div
+  className="col-sm-3"
+>
+  <h4>
+    <FontAwesome
+      name="object-group"
+    />
+     Category
+  </h4>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item cursorPointer "
+      key="all"
+      onClick={[Function]}
+    >
+      All
+    </li>
+    <li
+      className="list-group-item cursorPointer active"
+      key="react"
+      onClick={[Function]}
+    >
+      React
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="redux"
+      onClick={[Function]}
+    >
+      Redux
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="angular"
+      onClick={[Function]}
+    >
+      Angular
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="es6"
+      onClick={[Function]}
+    >
+      ES6
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`should set 'active' css class to currently selected category 1`] = `
+<div
+  className="col-sm-3"
+>
+  <h4>
+    <FontAwesome
+      name="object-group"
+    />
+     Category
+  </h4>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item cursorPointer "
+      key="all"
+      onClick={[Function]}
+    >
+      All
+    </li>
+    <li
+      className="list-group-item cursorPointer active"
+      key="react"
+      onClick={[Function]}
+    >
+      React
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="redux"
+      onClick={[Function]}
+    >
+      Redux
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="angular"
+      onClick={[Function]}
+    >
+      Angular
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="es6"
+      onClick={[Function]}
+    >
+      ES6
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`should set current category when clicked 1`] = `
+<div
+  className="col-sm-3"
+>
+  <h4>
+    <FontAwesome
+      name="object-group"
+    />
+     Category
+  </h4>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item cursorPointer "
+      key="all"
+      onClick={[Function]}
+    >
+      All
+    </li>
+    <li
+      className="list-group-item cursorPointer active"
+      key="react"
+      onClick={[Function]}
+    >
+      React
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="redux"
+      onClick={[Function]}
+    >
+      Redux
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="angular"
+      onClick={[Function]}
+    >
+      Angular
+    </li>
+    <li
+      className="list-group-item cursorPointer "
+      key="es6"
+      onClick={[Function]}
+    >
+      ES6
+    </li>
+  </ul>
+</div>
+`;

@@ -13,34 +13,6 @@
       "body": "One framework. Mobile & desktop.",
       "author": "google",
       "category": "angular"
-    },
-    {
-      "id": 3,
-      "title": "Learn Redux in 10 minutes!",
-      "body": "Just kidding. It takes more than 10 minutes to learn technology.",
-      "author": "thingone",
-      "category": "redux"
-    },
-    {
-      "title": "p1",
-      "body": "p1 desc",
-      "author": "abc",
-      "category": "es6",
-      "id": 4
-    },
-    {
-      "title": "p2",
-      "body": "p2 desc",
-      "author": "def",
-      "category": "es6",
-      "id": 5
-    },
-    {
-      "title": "p3",
-      "body": "p3 body",
-      "author": "hari",
-      "category": "java",
-      "id": 6
     }
   ],
   "categories": [

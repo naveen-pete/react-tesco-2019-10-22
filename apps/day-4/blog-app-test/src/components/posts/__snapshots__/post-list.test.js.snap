@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a message when posts array is empty 1`] = `
+<div
+  className="col-sm-9"
+>
+  <div
+    className="pull-right"
+  >
+    <Link
+      className="btn btn-sm btn-primary"
+      replace={false}
+      to="/posts/new"
+    >
+      <span
+        className="glyphicon glyphicon-plus"
+      />
+       New Post
+    </Link>
+  </div>
+  <h4>
+    <FontAwesome
+      name="envelope"
+    />
+     Posts (Category:
+     
+    <span
+      id="category"
+    >
+      All
+    </span>
+    )
+  </h4>
+  <AppAlert
+    message="No posts available for selected category."
+    type="info"
+  />
+</div>
+`;
+
+exports[`should render posts 1`] = `
+<div
+  className="col-sm-9"
+>
+  <div
+    className="pull-right"
+  >
+    <Link
+      className="btn btn-sm btn-primary"
+      replace={false}
+      to="/posts/new"
+    >
+      <span
+        className="glyphicon glyphicon-plus"
+      />
+       New Post
+    </Link>
+  </div>
+  <h4>
+    <FontAwesome
+      name="envelope"
+    />
+     Posts (Category:
+     
+    <span
+      id="category"
+    >
+      All
+    </span>
+    )
+  </h4>
+  <Connect(PostListItem)
+    key="1"
+    post={
+      Object {
+        "author": "facebook",
+        "body": "Redux can be described in three fundamental principles: (a) Single source of truth (b) State is read-only (c) Changes are made with pure functions",
+        "category": "redux",
+        "commentCount": 10,
+        "id": 1,
+        "timestamp": 1468479767290,
+        "title": "Redux Principles",
+        "voteScore": 4,
+      }
+    }
+  />
+  <Connect(PostListItem)
+    key="2"
+    post={
+      Object {
+        "author": "google",
+        "body": "One framework. Mobile & desktop.",
+        "category": "angular",
+        "commentCount": 15,
+        "id": 2,
+        "timestamp": 1468479767290,
+        "title": "Angular",
+        "voteScore": 6,
+      }
+    }
+  />
+  <Connect(PostListItem)
+    key="3"
+    post={
+      Object {
+        "author": "thingone",
+        "body": "Just kidding. It takes more than 10 minutes to learn technology.",
+        "category": "redux",
+        "commentCount": 20,
+        "id": 3,
+        "timestamp": 1468479767190,
+        "title": "Learn Redux in 10 minutes!",
+        "voteScore": 8,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`should render posts for a particular category 1`] = `
+<div
+  className="col-sm-9"
+>
+  <div
+    className="pull-right"
+  >
+    <Link
+      className="btn btn-sm btn-primary"
+      replace={false}
+      to="/posts/new"
+    >
+      <span
+        className="glyphicon glyphicon-plus"
+      />
+       New Post
+    </Link>
+  </div>
+  <h4>
+    <FontAwesome
+      name="envelope"
+    />
+     Posts (Category:
+     
+    <span
+      id="category"
+    >
+      Redux
+    </span>
+    )
+  </h4>
+  <Connect(PostListItem)
+    key="1"
+    post={
+      Object {
+        "author": "facebook",
+        "body": "Redux can be described in three fundamental principles: (a) Single source of truth (b) State is read-only (c) Changes are made with pure functions",
+        "category": "redux",
+        "commentCount": 10,
+        "id": 1,
+        "timestamp": 1468479767290,
+        "title": "Redux Principles",
+        "voteScore": 4,
+      }
+    }
+  />
+  <Connect(PostListItem)
+    key="3"
+    post={
+      Object {
+        "author": "thingone",
+        "body": "Just kidding. It takes more than 10 minutes to learn technology.",
+        "category": "redux",
+        "commentCount": 20,
+        "id": 3,
+        "timestamp": 1468479767190,
+        "title": "Learn Redux in 10 minutes!",
+        "voteScore": 8,
+      }
+    }
+  />
+</div>
+`;
