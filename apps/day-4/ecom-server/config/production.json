@@ -1,0 +1,6 @@
+{
+  "app-name": "eCommerce App - Production",
+  "db": {
+    "connection-string": "prod-server"
+  }
+}
